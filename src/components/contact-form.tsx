@@ -21,12 +21,12 @@ const ContactForm = () => {
             placeholder="Email"
           />
         </label>
-        <label htmlFor="subject">
+        <label htmlFor="company">
           <input
             type="text"
-            name="subject"
+            name="company"
             className="col-span-1 border-b w-full border-black outline-none py-3 text-base lg:text-[22px] lg:leading-[33px] tracking-tight font-jost text-text-gray"
-            placeholder="Subject"
+            placeholder="Company"
           />
         </label>
         <label htmlFor="phone">
@@ -35,6 +35,22 @@ const ContactForm = () => {
             name="phone"
             className="col-span-1 border-b w-full border-black outline-none py-3 text-base lg:text-[22px] lg:leading-[33px] tracking-tight font-jost text-text-gray"
             placeholder="Phone"
+          />
+        </label>
+        <label htmlFor="exhibition">
+          <input
+            type="text"
+            name="exhibition"
+            className="col-span-1 border-b w-full border-black outline-none py-3 text-base lg:text-[22px] lg:leading-[33px] tracking-tight font-jost text-text-gray"
+            placeholder="Exhibition"
+          />
+        </label>
+        <label htmlFor="size">
+          <input
+            type="number"
+            name="size"
+            className="col-span-1 border-b w-full border-black outline-none py-3 text-base lg:text-[22px] lg:leading-[33px] tracking-tight font-jost text-text-gray"
+            placeholder="Size (m2)"
           />
         </label>
         <textarea

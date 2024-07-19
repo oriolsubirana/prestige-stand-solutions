@@ -1,8 +1,45 @@
-# Astro Starter Kit:
+# Prestige Stand Solutions Landing Page
 
-This is an Interior Design Website Template Built with Astro, React Js, TypeScript And Tailwind CSS.
+Welcome to the Prestige Stand Solutions Landing Page repository. This project is a modern, responsive landing page built using Astro, React JS, TypeScript, and Tailwind CSS. The goal of this project is to provide a clean, elegant, and functional landing page to showcase Prestige Stand Solutions' products and services.
 
-Developed with much love :), by Onwudebelu Prisca A.K.A. natural_tech_babe
+## Table of Contents
+
+- [Demo](#demo)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Project Structure](#project-structure)
+- [Contact](#contact)
+
+## Demo
+
+Check out the live demo of the landing page [here](#).
+
+## Features
+
+- **Responsive Design**: Ensures the landing page looks great on all devices.
+- **Modern UI**: Clean and modern design with smooth animations.
+- **Fast Performance**: Optimized for fast loading times and smooth performance.
+- **Easy Customization**: Built with modular components for easy customization and scaling.
+- **SEO Friendly**: Proper use of meta tags and best practices for SEO.
+
+## Tech Stack
+
+- **Astro**: Modern frontend framework for fast websites.
+- **React JS**: A JavaScript library for building user interfaces.
+- **TypeScript**: Typed JavaScript at Any Scale.
+- **Tailwind CSS**: A utility-first CSS framework for rapid UI development.
+
+## Getting Started
+
+Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
+
+### Prerequisites
+
+Make sure you have the following installed on your machine:
+
+- Node.js (v14.x or later)
+- npm (v6.x or later) or yarn (v1.x or later)
 
 ## 🚀 Project Structure
 
@@ -33,7 +70,7 @@ Inside of My Interior Design Template Project, you'll see the following folders 
 And other config files.
 ```
 
-## GitHub Repository
+## Contact
+If you have any questions or feedback, please reach out to us at contact@prestigestandsolutions.com.
 
-Feel free to check [my repo](https://github.com/PriscaTonia/interior-design-website)
-Also preview with [live link](https://interior-design-website-ntb.vercel.app/).
+
