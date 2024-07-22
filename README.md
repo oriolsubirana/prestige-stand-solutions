@@ -43,7 +43,7 @@ Make sure you have the following installed on your machine:
 
 ## 🚀 Project Structure
 
-Inside of My Interior Design Template Project, you'll see the following folders and files:
+Inside of the Template Project, you'll see the following folders and files:
 
 ```
 /
