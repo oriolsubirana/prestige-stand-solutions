@@ -2,19 +2,24 @@ import React, { useState } from "react";
 import Logo from "../icons/logo.tsx";
 import useMediaQuery from "../utils/useMediaQuery.ts";
 import { motion } from "framer-motion";
+import IconNavbar from "../icons/icon-navbar.tsx"
 
 const Navbar = () => {
   const [toggled, setToggled] = useState(false);
   const matches = useMediaQuery("(min-width: 1280px)");
 
   const linkStyle = "text-xl leading-6 font-jost text-primary-200";
+  const linkStyleLogo = "text-xl leading-6 font-jost text-primary-100 font-bold p-0.5";
 
   return (
     <div className="max-w-[1200px] px-12 xl:px-0 m-auto w-full py-11 flex justify-between items-center">
-      <a href="/">
+      <nav className="flex flex-row gap-2" >
+      <IconNavbar />
+        <a href="/" className={linkStyleLogo}>
         {" "}
-        <Logo />
-      </a>
+         Prestige Stand Solutions
+        </a>
+      </nav>
 
       {/* Nav List for Desktop */}
       {matches && (

@@ -11,7 +11,7 @@ const ContactInfo = () => {
       </h5>
       <h5 className="flex flex-col xl:flex-row gap-4 items-center text-l font-jost tracking-tight">
         {" "}
-        <Phone /> +1 (378) 400-1234
+        <Phone /> +34 645 559 047
       </h5>
       <h5 className="flex flex-col xl:flex-row gap-4 items-center text-l font-jost tracking-tight">
         {" "}

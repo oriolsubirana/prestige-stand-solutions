@@ -1,22 +1,29 @@
 ---
-import MainLayout from '../layouts/main-layout.astro'
-import QuoteText from '../components/quote.tsx'
-import  Facebook  from '../icons/facebook.tsx';
-import  Twitter  from '../icons/twitter.tsx';
-import  LinkedIn  from '../icons/linkedin.tsx';
-import Instagram  from '../icons/instagram.tsx';
-
+import MainLayout from "../layouts/main-layout.astro";
+import QuoteText from "../components/quote.tsx";
+import Facebook from "../icons/facebook.tsx";
+import Twitter from "../icons/twitter.tsx";
+import LinkedIn from "../icons/linkedin.tsx";
+import Instagram from "../icons/instagram.tsx";
 ---
 
-
-<MainLayout title = 'Prestige Stand Solutions About Us'>
-
+<MainLayout title="Prestige Stand Solutions About Us">
   <!-- Banner Section -->
 
   <section class="w-full h-[20vh] flex justify-center items-end">
-    <div class="py-[10px] lg:py-[41px] px-[10px] lg:px-[50px] flex flex-col justify-center items-center bg-white gap-2.5">
-      <h1 class="text-[30px] leading-[40px] lg:text-[50px] lg:leading-[62px] font-dm capitalize text-primary-200 ">About Us</h1>
-      <p class="text-base lg:text-[22px] lg:leading-[33px] tracking-tight font-jost text-text-gray"> <a href="/">Home</a> / About Us </p>
+    <div
+      class="py-[10px] lg:py-[41px] px-[10px] lg:px-[50px] flex flex-col justify-center items-center bg-white gap-2.5"
+    >
+      <h1
+        class="text-[30px] leading-[40px] lg:text-[50px] lg:leading-[62px] font-dm capitalize text-primary-200"
+      >
+        About Us
+      </h1>
+      <p
+        class="text-base lg:text-[22px] lg:leading-[33px] tracking-tight font-jost text-text-gray"
+      >
+        <a href="/">Home</a> / About Us
+      </p>
     </div>
   </section>
 
@@ -28,42 +35,100 @@ import Instagram  from '../icons/instagram.tsx';
 -->
   <!-- What We Are Section -->
 
-  <section class="w-full pt-[100px] lg:pt-[100px] px-12 lg:px-0 mx-auto lg:max-w-[1200px] ">
-    <div class="w-full flex flex-col-reverse lg:flex-row justify-between gap-10 items-center">
+  <section
+    class="w-full pt-[100px] lg:pt-[100px] px-12 lg:px-0 mx-auto lg:max-w-[1200px]"
+  >
+    <div
+      class="w-full flex flex-col-reverse lg:flex-row justify-between gap-10 items-center"
+    >
       <div class="flex flex-col gap-6">
-        <h2 class="text-[30px] text-center lg:text-left font-dm tracking-wide capitalize leading-8 md:leading-[62.50px] md:text-[50px] text-text-blue ">What we are</h2>
-        <p class="text-base md:text-[22px] lg:max-w-[85%] text-justify lg:text-left tracking-tight font-jost text-text-gray leading-[33px]">Prestige Stand Solutions designs and constructs bespoke exhibition stands, leveraging expertise in the chemicals sector and supply chain management to deliver high-quality, tailored solutions.</p>
+        <h2
+          class="text-[30px] text-center lg:text-left font-dm tracking-wide capitalize leading-8 md:leading-[62.50px] md:text-[50px] text-text-blue"
+        >
+          What we are
+        </h2>
+        <p
+          class="text-base md:text-[22px] lg:max-w-[85%] text-justify lg:text-left tracking-tight font-jost text-text-gray leading-[33px]"
+        >
+          Prestige Stand Solutions designs and constructs bespoke exhibition
+          stands, leveraging expertise in the chemicals sector and supply chain
+          management to deliver high-quality, tailored solutions.
+        </p>
       </div>
-      <img src="/about1.png" alt="">
+      <img
+        src="/construction3.jpg"
+        width={600}
+        style="border-radius: 40px"
+        alt=""
+      />
     </div>
   </section>
 
   <!-- What We Do Section -->
 
-  <section class="w-full pt-[100px] lg:pt-[150px] px-12 lg:px-0 mx-auto lg:max-w-[1200px] ">
-    <div class="w-full flex flex-col-reverse lg:flex-row-reverse justify-between gap-24 items-center">
+  <section
+    class="w-full pt-[100px] lg:pt-[150px] px-12 lg:px-0 mx-auto lg:max-w-[1200px]"
+  >
+    <div
+      class="w-full flex flex-col-reverse lg:flex-row-reverse justify-between gap-24 items-center"
+    >
       <div class="flex flex-col gap-6">
-        <h2 class="text-[30px] text-center lg:text-left font-dm tracking-wide capitalize leading-8 md:leading-[62.50px] md:text-[50px] text-text-blue ">What we do</h2>
-        <p class="text-base md:text-[22px] lg:max-w-[95%] text-justify lg:text-left tracking-tight font-jost text-text-gray leading-[33px]">We offer unique stand designs, high-quality construction, full-service management, and innovative solutions, providing end-to-end services from conceptualization to installation, particularly for the chemical industry.</p>
+        <h2
+          class="text-[30px] text-center lg:text-left font-dm tracking-wide capitalize leading-8 md:leading-[62.50px] md:text-[50px] text-text-blue"
+        >
+          What we do
+        </h2>
+        <p
+          class="text-base md:text-[22px] lg:max-w-[95%] text-justify lg:text-left tracking-tight font-jost text-text-gray leading-[33px]"
+        >
+          We offer unique stand designs, high-quality construction, full-service
+          management, and innovative solutions, providing end-to-end services
+          from conceptualization to installation, particularly for the chemical
+          industry.
+        </p>
       </div>
-      <img src="/about2.png" alt="">
+      <img
+        src="/construction2.avif"
+        width={550}
+        style="border-radius: 40px"
+        alt=""
+      />
     </div>
   </section>
 
+  <!-- The End Result Section -->
 
-    <!-- The End Result Section -->
-
-    <section class="w-full pt-[100px] lg:pt-[100px] px-12 lg:px-0 mx-auto lg:max-w-[1200px] ">
-      <div class="w-full flex flex-col-reverse lg:flex-row justify-between gap-10 items-center">
-        <div class="flex flex-col gap-6">
-          <h2 class="text-[30px] text-center lg:text-left font-dm tracking-wide capitalize leading-8 md:leading-[62.50px] md:text-[50px] text-text-blue ">The End Result</h2>
-          <p class="text-base md:text-[22px] lg:max-w-[85%] text-justify lg:text-left tracking-tight font-jost text-text-gray leading-[33px]">We ensure a seamless, stress-free experience with captivating stands that effectively communicate complex innovations, enhancing brand presence and making a significant impact at industry events.</p>
-        </div>
-        <img src="/about1.png" alt="">
+  <section
+    class="w-full pt-[100px] lg:pt-[100px] px-12 lg:px-0 mx-auto lg:max-w-[1200px]"
+  >
+    <div
+      class="w-full flex flex-col-reverse lg:flex-row justify-between gap-10 items-center pb-20"
+    >
+      <div class="flex flex-col gap-6">
+        <h2
+          class="text-[30px] text-center lg:text-left font-dm tracking-wide capitalize leading-8 md:leading-[62.50px] md:text-[50px] text-text-blue"
+        >
+          The End Result
+        </h2>
+        <p
+          class="text-base md:text-[22px] lg:max-w-[85%] text-justify lg:text-left tracking-tight font-jost text-text-gray leading-[33px]"
+        >
+          We ensure a seamless, stress-free experience with captivating stands
+          that effectively communicate complex innovations, enhancing brand
+          presence and making a significant impact at industry events.
+        </p>
       </div>
-    </section>
+      <img
+        src="/construction5.png"
+        width={600}
+        style="border-radius: 40px"
+        alt=""
+      />
+    </div>
+  </section>
+  <div class="border border-gray-300"></div>
 
-  <!-- What People Think About Us Section -->
+  <!-- What People Think About Us Section 
 
   <section class="w-full py-[100px] lg:py-[185px] mt-[173px] px-12 lg:px-0 mx-auto bg-primary-300 ">
     <div class="w-full flex flex-col gap-10 lg:max-w-[1200px] mx-auto" >
@@ -98,21 +163,18 @@ import Instagram  from '../icons/instagram.tsx';
         <img src="/person3.png" alt="">
       </div>
 	  </div>
-  </section>
-
+  </section>-->
 </MainLayout>
 
 <style>
-
   /* Hide scrollbar for Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {
-      display: none;
+    display: none;
   }
 
   /* Hide scrollbar for IE, Edge and Firefox */
   .no-scrollbar {
-      -ms-overflow-style: none;  /* IE and Edge */
-      scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
   }
-
 </style>
