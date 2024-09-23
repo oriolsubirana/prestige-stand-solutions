@@ -10,7 +10,7 @@ const IconNavbar = () => {
             stroke="#CDA274"
             fill="none"
             strokeLinecap="round"
-            stroke-linejoin="round">
+            strokeLinejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" />
             <path d="M3 21v-13l9-4l9 4v13" />
             <path d="M13 13h4v8h-10v-6h6" />
