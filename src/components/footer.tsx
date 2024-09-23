@@ -10,9 +10,9 @@ const linkStyleLogo = "text-xl leading-6 font-jost text-primary-100 font-bold p-
 const Footer = () => {
   return (
     <footer className="mt-[135px] w-full">
-      <div className="w-full max-w-[1200px] px-12 xl:px-0 mx-auto pb-[135px] grid grid-cols-1 lg:grid-cols-6 md:grid-cols-2 gap-6">
+      <div className="w-full max-w-[1200px] px-12 xl:px-0 mx-auto pb-[135px] grid grid-cols-3 lg:grid-cols-4 gap-4">
         {/* start */}
-        <div className="col-span-3 md:col-span-3">
+        <div className="col-span-3 lg:col-span-2">
           <div className="flex">
             <IconNavbar />
             <a href="/" className={linkStyleLogo}>
@@ -25,7 +25,7 @@ const Footer = () => {
           </p>
 
         </div>
-        <div className="col-span-1 flex flex-col gap-4">
+        <div className="col-span-3 lg:col-span-1 flex flex-col gap-4">
           <h5 className="text-primary-200 font-dm text-[22px] lg:text-[25px] leading-loose">
             Pages
           </h5>
@@ -50,7 +50,7 @@ const Footer = () => {
             </a>
           </div>
         </div>
-        <div className="col-span-1 flex flex-col gap-4">
+        <div className="col-span-3 lg:col-span-1 flex flex-col gap-4">
           <h5 className="text-primary-200 font-dm text-[22px] lg:text-[25px] leading-loose">
             Contact
           </h5>
