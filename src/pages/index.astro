@@ -106,7 +106,7 @@ const experiences = [
 	<!-- Banner-->
 
 	<section
-		class="w-full lg:max-w-[1200px] mx-auto px-12 xl:px-0 flex flex-col-reverse justify-center items-center lg:grid grid-cols-2 gap-[75px] pt-[50px] lg:pt-[20px]"
+		class="w-full lg:max-w-[1200px] mx-auto px-12 xl:px-0 flex flex-col-reverse justify-center items-center lg:grid grid-cols-2 gap-[75px] pt-[50px] lg:pt-[20px] pb-20"
 	>
 		<div
 			class="flex flex-col gap-8 max-w-[472px] items-center lg:items-start py-6"
@@ -151,32 +151,102 @@ const experiences = [
 	</section>-->
 
 	<!-- Services Section -->
+	<div class="w-full bg-primary-300">
+		<section
+			class="w-full pt-[100px] lg:pt-[100px] px-12 lg:px-0 mx-auto lg:max-w-[1200px]"
+		>
+			<div
+				class="w-full flex flex-col-reverse lg:flex-row justify-between gap-10 items-center"
+			>
+				<div class="flex flex-col gap-6">
+					<h2
+						class="text-[30px] text-center lg:text-left font-dm tracking-wide capitalize leading-8 md:leading-[62.50px] md:text-[50px] text-text-blue"
+					>
+						Who we are
+					</h2>
+					<p
+						class="text-base md:text-[22px] lg:max-w-[85%] text-justify lg:text-left tracking-tight font-jost text-text-gray leading-[33px]"
+					>
+						Prestige Stand Solutions designs and constructs bespoke
+						exhibition stands, leveraging expertise in the chemicals
+						sector and supply chain management to deliver
+						high-quality, tailored solutions.
+					</p>
+				</div>
+				<img
+					src="/construction3.jpg"
+					width={600}
+					style="border-radius: 40px"
+					alt=""
+				/>
+			</div>
+		</section>
 
-	<section
-		class="w-full bg-primary-300 px-12 xl:px-0 mx-auto mt-[100px] lg:mt-[100px] py-[100px] flex flex-col gap-8 lg:gap-10 lg:flex-row px-12 xl:px-0 w-full mx-auto pt-[100px] lg:pt-[100px] justify-between"
-	>
-		{
-			services.map((service) => {
-				return (
-					<div class="w-full max-w-[358px] mx-auto flex flex-col justify-center items-center gap-3 md:gap-5">
-						<h3 class="text-text-blue font-dm text-[22px] md:text-[25px] leading-loose">
-							{service.title}
-						</h3>
-						<p class="text-base md:text-[22px] tracking-tight font-jost text-text-gray leading-[33px] text-center">
-							{" "}
-							{service.text}
-						</p>
-						<a
-							href="/services"
-							class="text-text-gray-200 leading-snug text-lg tracking-tight font-jost font-semibold gap-2 py-4 md:py-8 startCenter"
-						>
-							Read More <ArrowSec />
-						</a>
-					</div>
-				);
-			})
-		}
-	</section>
+		<!-- What We Do Section -->
+
+		<section
+			class="w-full pt-[100px] lg:pt-[150px] px-12 lg:px-0 mx-auto lg:max-w-[1200px]"
+		>
+			<div
+				class="w-full flex flex-col-reverse lg:flex-row-reverse justify-between gap-24 items-center"
+			>
+				<div class="flex flex-col gap-6">
+					<h2
+						class="text-[30px] text-center lg:text-left font-dm tracking-wide capitalize leading-8 md:leading-[62.50px] md:text-[50px] text-text-blue"
+					>
+						What we do
+					</h2>
+					<p
+						class="text-base md:text-[22px] lg:max-w-[95%] text-justify lg:text-left tracking-tight font-jost text-text-gray leading-[33px]"
+					>
+						We offer unique stand designs, high-quality
+						construction, full-service management, and innovative
+						solutions, providing end-to-end services from
+						conceptualization to installation, particularly for the
+						chemical industry.
+					</p>
+				</div>
+				<img
+					src="/construction2.avif"
+					width={550}
+					style="border-radius: 40px"
+					alt=""
+				/>
+			</div>
+		</section>
+
+		<!-- The End Result Section -->
+
+		<section
+			class="w-full pt-[100px] lg:pt-[100px] px-12 lg:px-0 mx-auto lg:max-w-[1200px]"
+		>
+			<div
+				class="w-full flex flex-col-reverse lg:flex-row justify-between gap-10 items-center pb-20"
+			>
+				<div class="flex flex-col gap-6">
+					<h2
+						class="text-[30px] text-center lg:text-left font-dm tracking-wide capitalize leading-8 md:leading-[62.50px] md:text-[50px] text-text-blue"
+					>
+						The End Result
+					</h2>
+					<p
+						class="text-base md:text-[22px] lg:max-w-[85%] text-justify lg:text-left tracking-tight font-jost text-text-gray leading-[33px]"
+					>
+						We ensure a seamless, stress-free experience with
+						captivating stands that effectively communicate complex
+						innovations, enhancing brand presence and making a
+						significant impact at industry events.
+					</p>
+				</div>
+				<img
+					src="/construction5.png"
+					width={600}
+					style="border-radius: 40px"
+					alt=""
+				/>
+			</div>
+		</section>
+	</div>
 
 	<!-- What People Think About Us Section 
 

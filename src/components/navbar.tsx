@@ -9,15 +9,14 @@ const Navbar = () => {
   const matches = useMediaQuery("(min-width: 1280px)");
 
   const linkStyle = "text-xl leading-6 font-jost text-primary-200";
-  const linkStyleLogo = "md:text-lg xl:text-xl leading-6 font-jost text-primary-100 font-bold p-0.5";
+  const linkStyleLogo = "md:text-lg xl:text-xl leading-6 font-jost text-primary-100 font-bold";
 
   return (
     <div className="max-w-[1200px] px-12 xl:px-0 m-auto w-full py-11 flex justify-between items-center">
-      <nav className="flex flex-row gap-2" >
-        <IconNavbar />
+      <nav className="relative flex flex-row">
         <a href="/" className={linkStyleLogo}>
           {" "}
-          Prestige Stand Solutions
+          <img src="/logo_pss.png" alt="Prestige Stand Solutions" className="h-11" />
         </a>
       </nav>
 
@@ -26,9 +25,6 @@ const Navbar = () => {
         <nav className="flex flex-row gap-6">
           <a href="/" className={linkStyle}>
             Home
-          </a>
-          <a href="/about" className={linkStyle}>
-            About Us
           </a>
           <a href="/services" className={linkStyle}>
             Services
@@ -71,9 +67,6 @@ const Navbar = () => {
         >
           <a href="/" className={linkStyle}>
             Home
-          </a>
-          <a href="/about" className={linkStyle}>
-            About Us
           </a>
           <a href="/services" className={linkStyle}>
             Services

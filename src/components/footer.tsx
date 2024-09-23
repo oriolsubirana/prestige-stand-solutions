@@ -9,17 +9,11 @@ const linkStyleLogo = "text-xl leading-6 font-jost text-primary-100 font-bold p-
 
 const Footer = () => {
   return (
-    <footer className="mt-[135px] w-full">
-      <div className="w-full max-w-[1200px] px-12 xl:px-0 mx-auto pb-[135px] grid grid-cols-3 lg:grid-cols-4 gap-4">
+    <footer className="border border-gray-300 w-full">
+      <div className="w-full max-w-[1200px] px-12 xl:px-0 mx-auto py-[60px] grid grid-cols-3 lg:grid-cols-4 gap-4">
         {/* start */}
         <div className="col-span-3 lg:col-span-2">
-          <div className="flex">
-            <IconNavbar />
-            <a href="/" className={linkStyleLogo}>
-              Prestige Stand Solutions
-              {" "}
-            </a>
-          </div>
+          <img src="/logo_pss.png" alt="Prestige Stand Solutions" className="h-11" />
           <p className="tracking-tight text-base lg:text-[22px] lg:leading-[33px] font-jost text-text-gray pt-[18px] pb-[33px]">
             Transforming Spaces, Captivating Audiences
           </p>
