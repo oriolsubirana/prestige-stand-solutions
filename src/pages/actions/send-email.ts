@@ -13,7 +13,7 @@ export const POST: APIRoute = async ({ request, redirect }) => {
     const exhibition = formData.get("exhibition") as string;
     const size = formData.get("size") as string;
     const message = formData.get("message") as string | null;
-    const to = "ontact@prestigestandsolutions.com";
+    const to = "contact@prestigestandsolutions.com";
 
     // Throw an error if we're missing any of the needed fields.
     if (!subject || !email || !message || !phone) {
