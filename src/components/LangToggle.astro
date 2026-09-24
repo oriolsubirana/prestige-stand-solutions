@@ -1,0 +1,29 @@
+---
+import { languages, localePath, useTranslations, type Lang } from "../i18n";
+
+interface Props {
+  lang: Lang;
+  path: string;
+}
+
+const { lang, path } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<nav aria-label={t.a11y.language} class="seg shrink-0">
+  {
+    (Object.keys(languages) as Lang[]).map((l) => (
+      <a
+        href={localePath(l, path)}
+        hreflang={l}
+        lang={l}
+        aria-current={l === lang ? "true" : undefined}
+        title={languages[l]}
+        class="seg-opt px-2.5 py-1.5 text-xs font-medium text-[var(--color-neutral-300)] no-underline hover:text-[var(--color-text)] aria-[current=true]:text-[var(--color-accent)] aria-[current=true]:shadow-[inset_0_0_0_1px_var(--color-accent)]"
+      >
+        <span aria-hidden="true">{l.toUpperCase()}</span>
+        <span class="sr-only">{languages[l]}</span>
+      </a>
+    ))
+  }
+</nav>

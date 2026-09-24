@@ -1,0 +1,63 @@
+---
+// Phosphor icons (regular), inlined so they inherit currentColor
+import ArrowRight from "@phosphor-icons/core/regular/arrow-right.svg?raw";
+import PenNib from "@phosphor-icons/core/regular/pen-nib.svg?raw";
+import Cube from "@phosphor-icons/core/regular/cube.svg?raw";
+import ClipboardText from "@phosphor-icons/core/regular/clipboard-text.svg?raw";
+import MonitorPlay from "@phosphor-icons/core/regular/monitor-play.svg?raw";
+import ChartLineUp from "@phosphor-icons/core/regular/chart-line-up.svg?raw";
+import Flask from "@phosphor-icons/core/regular/flask.svg?raw";
+import ForkKnife from "@phosphor-icons/core/regular/fork-knife.svg?raw";
+import Cpu from "@phosphor-icons/core/regular/cpu.svg?raw";
+import Drop from "@phosphor-icons/core/regular/drop.svg?raw";
+import GearSix from "@phosphor-icons/core/regular/gear-six.svg?raw";
+import CarProfile from "@phosphor-icons/core/regular/car-profile.svg?raw";
+import FirstAidKit from "@phosphor-icons/core/regular/first-aid-kit.svg?raw";
+import TShirt from "@phosphor-icons/core/regular/t-shirt.svg?raw";
+import Lightning from "@phosphor-icons/core/regular/lightning.svg?raw";
+import AirplaneTilt from "@phosphor-icons/core/regular/airplane-tilt.svg?raw";
+import EnvelopeSimple from "@phosphor-icons/core/regular/envelope-simple.svg?raw";
+import Phone from "@phosphor-icons/core/regular/phone.svg?raw";
+import GlobeSimple from "@phosphor-icons/core/regular/globe-simple.svg?raw";
+import PaperPlaneTilt from "@phosphor-icons/core/regular/paper-plane-tilt.svg?raw";
+import CheckCircle from "@phosphor-icons/core/regular/check-circle.svg?raw";
+import List from "@phosphor-icons/core/regular/list.svg?raw";
+import X from "@phosphor-icons/core/regular/x.svg?raw";
+
+const icons = {
+  "arrow-right": ArrowRight,
+  "pen-nib": PenNib,
+  "cube": Cube,
+  "clipboard-text": ClipboardText,
+  "monitor-play": MonitorPlay,
+  "chart-line-up": ChartLineUp,
+  "flask": Flask,
+  "fork-knife": ForkKnife,
+  "cpu": Cpu,
+  "drop": Drop,
+  "gear-six": GearSix,
+  "car-profile": CarProfile,
+  "first-aid-kit": FirstAidKit,
+  "t-shirt": TShirt,
+  "lightning": Lightning,
+  "airplane-tilt": AirplaneTilt,
+  "envelope-simple": EnvelopeSimple,
+  "phone": Phone,
+  "globe-simple": GlobeSimple,
+  "paper-plane-tilt": PaperPlaneTilt,
+  "check-circle": CheckCircle,
+  "list": List,
+  "x": X,
+} as const;
+
+export type IconName = keyof typeof icons;
+
+interface Props {
+  name: IconName;
+  class?: string;
+}
+
+const { name, class: className } = Astro.props;
+---
+
+<span class:list={["icon", className]} aria-hidden="true" set:html={icons[name]} />

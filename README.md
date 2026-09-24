@@ -1,6 +1,6 @@
 # Prestige Stand Solutions Landing Page
 
-Welcome to the Prestige Stand Solutions Landing Page repository. This project is a modern, responsive landing page built using Astro, React JS, TypeScript, and Tailwind CSS. The goal of this project is to provide a clean, elegant, and functional landing page to showcase Prestige Stand Solutions' products and services.
+Welcome to the Prestige Stand Solutions Landing Page repository. This project is a modern, responsive landing page built using Astro 7, TypeScript, and Tailwind CSS 4. The goal of this project is to provide a clean, elegant, and functional landing page to showcase Prestige Stand Solutions' products and services.
 
 ## Table of Contents
 
@@ -26,7 +26,6 @@ Check out the live demo of the landing page [here](#).
 ## Tech Stack
 
 - **Astro**: Modern frontend framework for fast websites.
-- **React JS**: A JavaScript library for building user interfaces.
 - **TypeScript**: Typed JavaScript at Any Scale.
 - **Tailwind CSS**: A utility-first CSS framework for rapid UI development.
 
@@ -38,8 +37,8 @@ Follow these instructions to get a copy of the project up and running on your lo
 
 Make sure you have the following installed on your machine:
 
-- Node.js (v14.x or later)
-- npm (v6.x or later) or yarn (v1.x or later)
+- Node.js (v22.12 or later)
+- npm (v10 or later)
 
 ## 🚀 Project Structure
 

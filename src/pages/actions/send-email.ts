@@ -1,48 +1,63 @@
 import type { APIRoute } from "astro";
 import { sendEmail } from "../../utils/email";
+import { getLang, localePath, useTranslations } from "../../i18n";
 
 export const prerender = false;
 
+const TO = "contact@prestigestandsolutions.com";
+const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const MAX_LENGTH = 5000;
+const NEEDS: Record<string, string> = { stand: "Stand", grafica: "Gráfica", ambos: "Stand y gráfica" };
+
+const escapeHtml = (value: string) =>
+  value.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
+
+const field = (form: FormData, name: string) => String(form.get(name) ?? "").trim().slice(0, MAX_LENGTH);
+
+const row = (label: string, value: string) =>
+  `<p style="margin-bottom: 12px; font-size: 16px;">${label}: <strong>${escapeHtml(value)}</strong></p>`;
+
 export const POST: APIRoute = async ({ request, redirect }) => {
-    // Get the form data submitted by the user on the home page
-    const formData = await request.formData();
-    const subject = formData.get("name") as string | null;
-    const email = formData.get("email") as string | null;
-    const company = formData.get("company") as string;
-    const phone = formData.get("phone") as string | null;
-    const exhibition = formData.get("exhibition") as string;
-    const size = formData.get("size") as string;
-    const message = formData.get("message") as string | null;
-    const to = "contact@prestigestandsolutions.com";
+  // The form enhances to fetch() and asks for JSON; without JS it gets redirects
+  const wantsJson = request.headers.get("accept")?.includes("application/json") ?? false;
+  const form = await request.formData();
+  const lang = getLang(String(form.get("lang") ?? ""));
+  const fail = (status: number) =>
+    wantsJson
+      ? Response.json({ ok: false }, { status })
+      : redirect(`${localePath(lang)}?status=error#${useTranslations(lang).ids.contact}`, 303);
 
-    // Throw an error if we're missing any of the needed fields.
-    if (!subject || !email || !message || !phone) {
-        throw new Error("Missing required fields");
-    }
+  const name = field(form, "name");
+  const email = field(form, "email");
+  const company = field(form, "company");
+  const phone = field(form, "phone");
+  const exhibition = field(form, "exhibition");
+  const size = field(form, "size");
+  const need = NEEDS[field(form, "need")] ?? NEEDS.ambos;
+  const message = field(form, "message");
 
-    // Try to send the email using a `sendEmail` function we'll create next. Throw
-    // an error if it fails.
-    try {
-        const html = `<div style="max-width: 600px; margin: 0 auto; border: 1px solid #e0e0e0; border-radius: 8px; padding: 24px; font-family: Arial, sans-serif; background-color: #f9f9f9; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-                        <div style="margin-bottom: 24px; color: #333;">
-                            <h2 style="margin-bottom: 16px; color: #444;">Contact Information</h2>
-                            <p style="margin-bottom: 12px; font-size: 16px;">Name: <strong>${subject}</strong></p>
-                            <p style="margin-bottom: 12px; font-size: 16px;">Email: <strong>${email}</strong></p>
-                            <p style="margin-bottom: 12px; font-size: 16px;">Company: <strong>${company}</strong></p>
-                            <p style="margin-bottom: 12px; font-size: 16px;">Phone: <strong>${phone}</strong></p>
-                            <p style="margin-bottom: 12px; font-size: 16px;">Exhibition: <strong>${exhibition}</strong></p>
-                            <p style="margin-bottom: 12px; font-size: 16px;">Size: <strong>${size}</strong></p>
-                            <div style="margin-top: 20px;">
-                                <h3 style="color: #444;">Message</h3>
-                                <p style="font-size: 15px; color: #555; line-height: 1.6;">${message}</p>
-                            </div>
-                        </div>
-                    </div>`;
-        await sendEmail({ subject, to, html });
-    } catch (error) {
-        throw new Error("Failed to send email");
-    }
+  if (!name || !EMAIL_PATTERN.test(email)) return fail(400);
 
-    // Redirect the user to a success page after the email is sent.
-    return redirect("/success");
+  const html = `<div style="max-width: 600px; margin: 0 auto; border: 1px solid #e0e0e0; border-radius: 8px; padding: 24px; font-family: Arial, sans-serif; background-color: #f9f9f9;">
+    <h2 style="margin-bottom: 16px; color: #444;">Nueva solicitud de presupuesto</h2>
+    ${row("Nombre", name)}
+    ${row("Email", email)}
+    ${row("Empresa", company)}
+    ${row("Teléfono", phone)}
+    ${row("Feria", exhibition)}
+    ${row("Superficie (m²)", size)}
+    ${row("Qué necesita", need)}
+    ${row("Idioma de la web", lang === "en" ? "Inglés" : "Español")}
+    <h3 style="color: #444; margin-top: 20px;">Mensaje</h3>
+    <p style="font-size: 15px; color: #555; line-height: 1.6; white-space: pre-wrap;">${escapeHtml(message)}</p>
+  </div>`;
+
+  try {
+    await sendEmail({ subject: `Presupuesto: ${name}`, to: TO, html, replyTo: email });
+  } catch (error) {
+    console.error("Failed to send contact email", error);
+    return fail(502);
+  }
+
+  return wantsJson ? Response.json({ ok: true }) : redirect(localePath(lang, "/success"), 303);
 };

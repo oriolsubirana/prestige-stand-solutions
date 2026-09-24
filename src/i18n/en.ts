@@ -1,0 +1,115 @@
+import type { Dictionary } from "./es";
+
+export const en: Dictionary = {
+  meta: {
+    title: "Prestige Stand Solutions · Graphic design and trade show stands",
+    description:
+      "We design the graphics and build the stand. One team, from the first sketch to dismantling, for any industry and any trade show.",
+    successTitle: "Message sent · Prestige Stand Solutions",
+  },
+  a11y: {
+    skip: "Skip to content",
+    home: "Prestige Stand Solutions, home",
+    mainNav: "Main",
+    menu: "Menu",
+    language: "Language",
+  },
+  ids: { services: "services", sectors: "sectors", projects: "projects", process: "process", contact: "contact" },
+  nav: { services: "Services", sectors: "Sectors", projects: "Projects", process: "Process", cta: "Get a quote" },
+  hero: {
+    tags: ["Graphic design", "Trade show stands"],
+    title: "Stands you can spot from across the hall.",
+    text: "We design the graphics and build the stand. One team, from the first sketch to dismantling, for any industry and any trade show.",
+    primary: "Get a quote",
+    secondary: "See projects",
+    alt: "Prestige Stand Solutions stand in an exhibition hall",
+  },
+  services: {
+    kicker: "What we do",
+    title: "Two crafts, one team.",
+    text: "Graphics and stand architecture are designed together, so your brand arrives at the show with a single voice.",
+    cards: [
+      {
+        title: "Graphic design and branding",
+        text: "Visual identity, large-format graphics, catalogues, signage and trade show materials. Everything your stand needs to communicate clearly.",
+        tags: ["Identity", "Large format", "Print", "Signage"],
+      },
+      {
+        title: "Stand design and construction",
+        text: "Custom stands, from 3D render to construction with first-rate materials. We handle logistics, installation, on-site support and dismantling.",
+        tags: ["3D render", "Construction", "Installation", "Interactive technology"],
+      },
+    ],
+    extras: [
+      { title: "End-to-end management", text: "Planning, permits, transport and coordination with the venue." },
+      { title: "Technology integration", text: "Screens, lighting and interactive elements that draw visitors in." },
+      { title: "Post-show analysis", text: "We measure results so your next show performs better." },
+    ],
+  },
+  sectors: {
+    kicker: "Every industry",
+    title: "We started in the chemical sector. Today we design for any industry.",
+    text: "We know how to communicate complex products. We bring that same rigour to every show, whatever your market.",
+    list: [
+      "Chemicals and pharma",
+      "Food",
+      "Technology",
+      "Cosmetics",
+      "Industry",
+      "Automotive",
+      "Healthcare",
+      "Fashion and retail",
+      "Energy",
+      "Tourism",
+    ],
+  },
+  projects: {
+    kicker: "Projects",
+    title: "From render to exhibition hall.",
+    cta: "Tell us about your show",
+    items: [
+      { title: "Novasol Chemicals", meta: "Modular stand · Chemical industry", alt: "Novasol Chemicals stand" },
+      { title: "Prestige corporate stand", meta: "Design, graphics and construction", alt: "Prestige corporate stand" },
+      { title: "On-site build", meta: "Custom curved structure", alt: "A custom curved structure being built in an exhibition hall" },
+      { title: "International trade shows", meta: "At every kind of event", alt: "Exhibition hall at an international trade show" },
+    ],
+  },
+  process: {
+    kicker: "How we work",
+    title: "Four steps, no surprises.",
+    steps: [
+      { title: "Briefing", text: "We get to know your brand, your goals and the show. Form and function from day one." },
+      { title: "Concept", text: "A creative idea tailored to each event, designed to grab attention." },
+      { title: "3D design and graphics", text: "From sketch to final render, with all the graphics built into the space." },
+      { title: "Build and installation", text: "Quality materials, on-time installation and on-site support until dismantling." },
+    ],
+  },
+  contact: {
+    kicker: "Contact",
+    title: "Got a trade show on the calendar?",
+    text: "Tell us the show and the floor area. We'll reply with a proposal within 48 hours.",
+  },
+  form: {
+    name: "Name",
+    email: "Email",
+    company: "Company",
+    phone: "Phone",
+    exhibition: "Trade show",
+    exhibitionPlaceholder: "Name and date",
+    size: "Floor area (m²)",
+    need: "What do you need",
+    needs: { stand: "Stand", grafica: "Graphics", ambos: "Both" },
+    message: "Message",
+    messagePlaceholder: "Hi, I'm interested in…",
+    submit: "Send message",
+    error: "The message could not be sent. Check your name and email, or write to us at contact@prestigestandsolutions.com.",
+    sentTitle: "Message sent",
+    sentText: "Thanks. We'll get back to you within 48 hours.",
+    again: "Send another",
+    home: "Back to home",
+  },
+  footer: {
+    tagline: "© Prestige Stand Solutions · Transforming spaces, captivating audiences",
+    contact: "Contact",
+  },
+};

@@ -1,0 +1,115 @@
+export const es = {
+  meta: {
+    title: "Prestige Stand Solutions · Diseño gráfico y stands para ferias",
+    description:
+      "Diseñamos la imagen gráfica y construimos el stand. Un solo equipo, del primer boceto al desmontaje, para cualquier sector y cualquier feria.",
+    successTitle: "Mensaje enviado · Prestige Stand Solutions",
+  },
+  a11y: {
+    skip: "Saltar al contenido",
+    home: "Prestige Stand Solutions, inicio",
+    mainNav: "Principal",
+    menu: "Menú",
+    language: "Idioma",
+  },
+  ids: { services: "servicios", sectors: "sectores", projects: "proyectos", process: "proceso", contact: "contacto" },
+  nav: { services: "Servicios", sectors: "Sectores", projects: "Proyectos", process: "Proceso", cta: "Pide presupuesto" },
+  hero: {
+    tags: ["Diseño gráfico", "Stands para ferias"],
+    title: "Stands que se ven desde el otro lado del pabellón.",
+    text: "Diseñamos la imagen gráfica y construimos el stand. Un solo equipo, del primer boceto al desmontaje, para cualquier sector y cualquier feria.",
+    primary: "Pide presupuesto",
+    secondary: "Ver proyectos",
+    alt: "Stand de Prestige Stand Solutions en pabellón",
+  },
+  services: {
+    kicker: "Qué hacemos",
+    title: "Dos oficios, un mismo equipo.",
+    text: "La gráfica y la arquitectura del stand se piensan juntas. Así tu marca llega a la feria con una sola voz.",
+    cards: [
+      {
+        title: "Diseño gráfico y branding",
+        text: "Identidad visual, gráfica de gran formato, catálogos, señalética y material para feria. Todo lo que tu stand necesita para comunicar con claridad.",
+        tags: ["Identidad", "Gran formato", "Impresión", "Señalética"],
+      },
+      {
+        title: "Diseño y construcción de stands",
+        text: "Stands a medida, del render 3D a la construcción con materiales de primera. Nos ocupamos de la logística, el montaje, el soporte en feria y el desmontaje.",
+        tags: ["Render 3D", "Construcción", "Montaje", "Tecnología interactiva"],
+      },
+    ],
+    extras: [
+      { title: "Gestión integral", text: "Planificación, permisos, transporte y coordinación con la feria." },
+      { title: "Integración tecnológica", text: "Pantallas, iluminación y elementos interactivos que atraen visitas." },
+      { title: "Análisis post-feria", text: "Medimos resultados para que tu próxima feria rinda más." },
+    ],
+  },
+  sectors: {
+    kicker: "Todos los sectores",
+    title: "Nacimos en el sector químico. Hoy diseñamos para cualquier industria.",
+    text: "Sabemos comunicar productos complejos. Esa misma exigencia la llevamos a cada feria, sea cual sea tu mercado.",
+    list: [
+      "Química y farma",
+      "Alimentación",
+      "Tecnología",
+      "Cosmética",
+      "Industria",
+      "Automoción",
+      "Salud",
+      "Moda y retail",
+      "Energía",
+      "Turismo",
+    ],
+  },
+  projects: {
+    kicker: "Proyectos",
+    title: "Del render al pabellón.",
+    cta: "Cuéntanos tu feria",
+    items: [
+      { title: "Novasol Chemicals", meta: "Stand modular · Industria química", alt: "Stand de Novasol Chemicals" },
+      { title: "Stand corporativo Prestige", meta: "Diseño, gráfica y construcción", alt: "Stand corporativo Prestige" },
+      { title: "Montaje en pabellón", meta: "Estructura curva a medida", alt: "Montaje de una estructura curva en pabellón" },
+      { title: "Ferias internacionales", meta: "Presencia en todo tipo de eventos", alt: "Pabellón de una feria internacional" },
+    ],
+  },
+  process: {
+    kicker: "Cómo trabajamos",
+    title: "Cuatro pasos, cero sorpresas.",
+    steps: [
+      { title: "Briefing", text: "Entendemos tu marca, tus objetivos y la feria. Forma y función desde el primer día." },
+      { title: "Concepto", text: "Una idea creativa hecha a medida para cada evento, pensada para captar la atención." },
+      { title: "Diseño 3D y gráfica", text: "Del boceto al render final, con toda la gráfica integrada en el espacio." },
+      { title: "Construcción y montaje", text: "Materiales de calidad, montaje en plazo y soporte in situ hasta el desmontaje." },
+    ],
+  },
+  contact: {
+    kicker: "Contacto",
+    title: "¿Tienes una feria en el calendario?",
+    text: "Cuéntanos la feria y los metros. Te respondemos con una propuesta en 48 horas.",
+  },
+  form: {
+    name: "Nombre",
+    email: "Email",
+    company: "Empresa",
+    phone: "Teléfono",
+    exhibition: "Feria",
+    exhibitionPlaceholder: "Nombre y fecha",
+    size: "Superficie (m²)",
+    need: "Qué necesitas",
+    needs: { stand: "Stand", grafica: "Gráfica", ambos: "Ambos" },
+    message: "Mensaje",
+    messagePlaceholder: "Hola, me interesa…",
+    submit: "Enviar mensaje",
+    error: "No se ha podido enviar el mensaje. Revisa el nombre y el email, o escríbenos a contact@prestigestandsolutions.com.",
+    sentTitle: "Mensaje enviado",
+    sentText: "Gracias. Te contactamos en menos de 48 horas.",
+    again: "Enviar otro",
+    home: "Volver al inicio",
+  },
+  footer: {
+    tagline: "© Prestige Stand Solutions · Transformamos espacios, cautivamos audiencias",
+    contact: "Contacto",
+  },
+};
+
+export type Dictionary = typeof es;

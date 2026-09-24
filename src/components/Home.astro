@@ -1,0 +1,213 @@
+---
+import { Image } from "astro:assets";
+import MainLayout from "../layouts/main-layout.astro";
+import Icon from "./Icon.astro";
+import ContactForm from "./ContactForm.astro";
+import { contact, extraIcons, sectorIcons, serviceIcons } from "../data/site";
+import { useTranslations, type Lang } from "../i18n";
+import standCorner from "../assets/stand-corner-2.jpeg";
+import standFront from "../assets/stand-front-2.jpeg";
+import novasol from "../assets/novasol-stand-2.jpeg";
+import buildCurved from "../assets/build-curved-2.jpeg";
+import tradeFair from "../assets/trade-fair.png";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const projectMedia = [
+  { img: novasol, position: "50% 40%", span: "md:row-span-2" },
+  { img: standFront, position: "50% 45%", span: "md:col-span-2" },
+  { img: buildCurved, position: "50% 50%", span: "" },
+  { img: tradeFair, position: "50% 50%", span: "" },
+];
+const projects = t.projects.items.map((item, i) => ({ ...item, ...projectMedia[i] }));
+---
+
+<MainLayout title={t.meta.title}>
+  <!-- Hero -->
+  <section id="top" class="relative flex flex-col md:min-h-[640px] md:flex-row md:items-center">
+    <div class="lighten relative h-[300px] w-full md:absolute md:inset-y-0 md:right-0 md:h-auto md:w-[72%]">
+      <Image
+        src={standCorner}
+        alt={t.hero.alt}
+        widths={[640, 1024, 1600, 2000]}
+        sizes="(min-width: 768px) 72vw, 100vw"
+        loading="eager"
+        fetchpriority="high"
+        class="h-full w-full object-cover [object-position:60%_50%]"
+      />
+    </div>
+    <div
+      class="pointer-events-none absolute inset-x-0 top-0 h-[300px] bg-[linear-gradient(0deg,var(--color-bg),transparent_45%)] md:inset-0 md:h-auto md:bg-[linear-gradient(90deg,var(--color-bg)_30%,color-mix(in_srgb,var(--color-bg)_60%,transparent)_55%,transparent_80%)]"
+    >
+    </div>
+    <div class="relative mx-auto w-full max-w-[1240px] px-5 pt-2 pb-12 md:py-20">
+      <div class="flex max-w-[620px] flex-col gap-[22px]">
+        <div class="flex flex-wrap gap-2">
+          {t.hero.tags.map((tag) => <span class="tag tag-accent">{tag}</span>)}
+        </div>
+        <h1 class="text-[clamp(40px,5.4vw,66px)] leading-[1.02] tracking-[-0.03em] text-balance">
+          {t.hero.title}
+        </h1>
+        <p class="m-0 max-w-[500px] text-lg leading-[1.55] text-pretty text-[var(--color-neutral-300)]">
+          {t.hero.text}
+        </p>
+        <div class="flex flex-wrap gap-2.5 pt-1.5">
+          <a href={`#${t.ids.contact}`} class="btn btn-primary btn-lg">{t.hero.primary} <Icon name="arrow-right" /></a>
+          <a href={`#${t.ids.projects}`} class="btn btn-secondary btn-lg">{t.hero.secondary}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section id={t.ids.services} class="mx-auto max-w-[1240px] px-5 pt-24 pb-10">
+    <div class="mb-10 flex max-w-[640px] flex-col gap-2.5">
+      <h6 class="text-[var(--color-accent)]">{t.services.kicker}</h6>
+      <h2 class="section-title">{t.services.title}</h2>
+      <p class="m-0 text-base text-pretty text-[var(--color-neutral-400)]">
+        {t.services.text}
+      </p>
+    </div>
+    <div class="grid grid-cols-[repeat(auto-fit,minmax(min(100%,420px),1fr))] gap-4">
+      {
+        t.services.cards.map((s, i) => (
+          <div class="card elev-sm gap-3.5 p-7">
+            <div class="flex items-center justify-between">
+              <Icon name={serviceIcons[i]} class="text-[30px] text-[var(--color-accent)]" />
+              <span class="text-[13px] text-[var(--color-neutral-500)]">{String(i + 1).padStart(2, "0")}</span>
+            </div>
+            <h3 class="text-2xl leading-[1.2]">{s.title}</h3>
+            <p class="m-0 flex-1 text-[15px] text-[var(--color-neutral-300)]">{s.text}</p>
+            <div class="flex flex-wrap gap-1.5 pt-1.5">
+              {s.tags.map((t) => <span class="tag tag-neutral">{t}</span>)}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+    <div class="grid grid-cols-[repeat(auto-fit,minmax(min(100%,260px),1fr))] gap-x-8 gap-y-7 pt-12">
+      {
+        t.services.extras.map((e, i) => (
+          <div class="flex gap-3">
+            <Icon name={extraIcons[i]} class="mt-0.5 text-xl text-[var(--color-accent)]" />
+            <div>
+              <h5 class="mb-1">{e.title}</h5>
+              <p class="m-0 text-sm text-[var(--color-neutral-400)]">{e.text}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- Sectores -->
+  <section id={t.ids.sectors} class="px-5 pt-14">
+    <div
+      class="mx-auto grid max-w-[1240px] grid-cols-[repeat(auto-fit,minmax(min(100%,360px),1fr))] items-start gap-10 rounded-[var(--radius-lg)] bg-[radial-gradient(120%_140%_at_0%_0%,var(--color-section-glow),var(--color-section)_60%)] p-[clamp(32px,5vw,64px)]"
+    >
+      <div class="flex flex-col gap-3">
+        <h6 class="text-[var(--color-accent-300)]">{t.sectors.kicker}</h6>
+        <h2 class="section-title">{t.sectors.title}</h2>
+        <p class="m-0 text-base text-pretty text-[var(--color-accent-200)]">
+          {t.sectors.text}
+        </p>
+      </div>
+      <ul class="m-0 flex list-none flex-wrap content-start gap-2 p-0">
+        {
+          t.sectors.list.map((name, i) => (
+            <li class="inline-flex items-center gap-2 rounded-[var(--radius-md)] border border-[var(--color-section-ghost)] px-3.5 py-[9px] text-sm text-[var(--color-accent-100)]">
+              <Icon name={sectorIcons[i]} class="text-base text-[var(--color-accent-300)]" />
+              {name}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <!-- Proyectos -->
+  <section id={t.ids.projects} class="mx-auto max-w-[1240px] px-5 pt-24 pb-10">
+    <div class="mb-8 flex flex-wrap items-end justify-between gap-5">
+      <div class="flex max-w-[560px] flex-col gap-2.5">
+        <h6 class="text-[var(--color-accent)]">{t.projects.kicker}</h6>
+        <h2 class="section-title">{t.projects.title}</h2>
+      </div>
+      <a href={`#${t.ids.contact}`} class="btn btn-ghost">{t.projects.cta} <Icon name="arrow-right" /></a>
+    </div>
+    <div class="grid auto-rows-[280px] grid-flow-dense grid-cols-1 gap-3.5 md:grid-cols-3">
+      {
+        projects.map((p) => (
+          <figure class:list={["relative m-0 overflow-hidden rounded-[var(--radius-lg)] bg-[var(--color-surface)]", p.span]}>
+            <div class="lighten absolute inset-0">
+              <Image
+                src={p.img}
+                alt={p.alt}
+                widths={[480, 800, 1200]}
+                sizes="(min-width: 768px) 66vw, 100vw"
+                class="h-full w-full object-cover"
+                style={`object-position: ${p.position}`}
+              />
+            </div>
+            <figcaption class="absolute inset-x-0 bottom-0 bg-[linear-gradient(transparent,color-mix(in_srgb,var(--color-bg)_92%,transparent))] px-[18px] pt-10 pb-4">
+              <div class="text-base font-medium">{p.title}</div>
+              <div class="text-xs text-[var(--color-neutral-300)]">{p.meta}</div>
+            </figcaption>
+          </figure>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- Proceso -->
+  <section id={t.ids.process} class="mx-auto max-w-[1240px] px-5 pt-20 pb-10">
+    <div class="mb-10 flex max-w-[560px] flex-col gap-2.5">
+      <h6 class="text-[var(--color-accent)]">{t.process.kicker}</h6>
+      <h2 class="section-title">{t.process.title}</h2>
+    </div>
+    <ol class="m-0 grid list-none grid-cols-[repeat(auto-fit,minmax(min(100%,240px),1fr))] gap-8 p-0">
+      {
+        t.process.steps.map((st, i) => (
+          <li class="flex flex-col gap-2.5">
+            <div class="flex items-center gap-3">
+              <span class="text-[13px] text-[var(--color-accent)]">{String(i + 1).padStart(2, "0")}</span>
+              <span class="h-px flex-1 bg-[linear-gradient(to_right,var(--color-divider),transparent)]" />
+            </div>
+            <h4>{st.title}</h4>
+            <p class="m-0 text-sm text-pretty text-[var(--color-neutral-400)]">{st.text}</p>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+
+  <!-- Contacto -->
+  <section
+    id={t.ids.contact}
+    class="mx-auto grid max-w-[1240px] grid-cols-[repeat(auto-fit,minmax(min(100%,340px),1fr))] items-start gap-12 px-5 pt-20 pb-24"
+  >
+    <div class="flex flex-col gap-[18px]">
+      <h6 class="text-[var(--color-accent)]">{t.contact.kicker}</h6>
+      <h2 class="section-title">{t.contact.title}</h2>
+      <p class="m-0 text-base text-[var(--color-neutral-400)]">
+        {t.contact.text}
+      </p>
+      <div class="flex flex-col gap-3 pt-2.5 text-[15px]">
+        <a href={`mailto:${contact.email}`} class="flex items-center gap-2.5 text-[var(--color-text)] no-underline">
+          <Icon name="envelope-simple" class="text-lg text-[var(--color-accent)]" />{contact.email}
+        </a>
+        <a href={contact.phoneHref} class="flex items-center gap-2.5 text-[var(--color-text)] no-underline">
+          <Icon name="phone" class="text-lg text-[var(--color-accent)]" />{contact.phone}
+        </a>
+        <span class="flex items-center gap-2.5">
+          <Icon name="globe-simple" class="text-lg text-[var(--color-accent)]" />{contact.web}
+        </span>
+      </div>
+    </div>
+    <ContactForm lang={lang} />
+  </section>
+</MainLayout>

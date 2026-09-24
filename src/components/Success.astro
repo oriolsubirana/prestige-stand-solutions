@@ -1,0 +1,21 @@
+---
+import MainLayout from "../layouts/main-layout.astro";
+import Icon from "./Icon.astro";
+import { localePath, useTranslations, type Lang } from "../i18n";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<MainLayout title={t.meta.successTitle} path="/success">
+  <section class="mx-auto flex max-w-[1240px] flex-col items-start gap-3 px-5 py-32">
+    <Icon name="check-circle" class="text-4xl text-[var(--color-accent)]" />
+    <h1 class="section-title">{t.form.sentTitle}</h1>
+    <p class="m-0 text-base text-[var(--color-neutral-400)]">{t.form.sentText}</p>
+    <a href={localePath(lang)} class="btn btn-secondary btn-lg mt-3">{t.form.home}</a>
+  </section>
+</MainLayout>

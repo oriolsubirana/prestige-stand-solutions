@@ -1,39 +1,53 @@
 ---
-import Navbar from '../components/navbar.tsx'
-import Footer from '../components/footer.tsx'
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { getLang, languages, localePath, useTranslations, type Lang } from "../i18n";
 
-export interface LayoutProps {
-  title : string 
+export interface Props {
+  title: string;
+  description?: string;
+  /** Path of this page without the locale prefix, used for alternates and the language toggle */
+  path?: string;
 }
 
-const { title } = Astro.props as LayoutProps
+const lang = getLang(Astro.currentLocale);
+const t = useTranslations(lang);
+const { title, description = t.meta.description, path = "/" } = Astro.props;
+const canonical = new URL(localePath(lang, path), Astro.site);
+const alternates = (Object.keys(languages) as Lang[]).map((l) => ({
+  lang: l,
+  href: new URL(localePath(l, path), Astro.site).href,
+}));
 ---
 
-
-<html lang="en">
+<!doctype html>
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="description" content="Prestige Stand Solutions" />
-    <meta title = {title}/>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#292f36" />
+    <link rel="canonical" href={canonical} />
+    {alternates.map((a) => <link rel="alternate" hreflang={a.lang} href={a.href} />)}
+    <link rel="alternate" hreflang="x-default" href={alternates[0].href} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content={lang === "es" ? "es_ES" : "en_GB"} />
     <title>{title}</title>
   </head>
-  <body>
-    <main class='bg-main bg-no-repeat bg-cover bg-center'>
-      <Navbar client:load/>
-      <slot/>
-      <!-- All different pages to be rendered here -->
-      <Footer />
+  <body class="flex min-h-dvh flex-col overflow-x-hidden font-sans">
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:rounded focus:bg-[var(--color-surface)] focus:px-4 focus:py-2"
+      >{t.a11y.skip}</a
+    >
+    <Header lang={lang} path={path} />
+    <main id="main" class="flex-1">
+      <slot />
     </main>
-    <p class="tracking-tight text-base text-center border border-gray-300 bg-white py-10 lg:text-[22px] lg:leading-[33px] font-jost text-text-gray">
-        Copyright © Prestige Stand Solutions
-    </p>
+    <Footer lang={lang} />
   </body>
 </html>
-
-
