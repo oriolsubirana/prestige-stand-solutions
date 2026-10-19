@@ -200,9 +200,6 @@ const projects = t.projects.items.map((item, i) => ({ ...item, ...projectMedia[i
         <a href={`mailto:${contact.email}`} class="flex items-center gap-2.5 text-[var(--color-text)] no-underline">
           <Icon name="envelope-simple" class="text-lg text-[var(--color-accent)]" />{contact.email}
         </a>
-        <a href={contact.phoneHref} class="flex items-center gap-2.5 text-[var(--color-text)] no-underline">
-          <Icon name="phone" class="text-lg text-[var(--color-accent)]" />{contact.phone}
-        </a>
         <span class="flex items-center gap-2.5">
           <Icon name="globe-simple" class="text-lg text-[var(--color-accent)]" />{contact.web}
         </span>

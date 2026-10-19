@@ -66,7 +66,7 @@ export const es = {
     title: "Del render al pabellón.",
     cta: "Cuéntanos tu feria",
     items: [
-      { title: "Novasol Chemicals", meta: "Stand modular · Industria química", alt: "Stand de Novasol Chemicals" },
+      { title: "Prestige Chemicals", meta: "Stand modular · Industria química", alt: "Stand de Prestige Chemicals" },
       { title: "Stand corporativo Prestige", meta: "Diseño, gráfica y construcción", alt: "Stand corporativo Prestige" },
       { title: "Montaje en pabellón", meta: "Estructura curva a medida", alt: "Montaje de una estructura curva en pabellón" },
       { title: "Ferias internacionales", meta: "Presencia en todo tipo de eventos", alt: "Pabellón de una feria internacional" },

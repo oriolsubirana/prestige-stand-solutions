@@ -2,8 +2,6 @@ import type { IconName } from "../components/Icon.astro";
 
 export const contact = {
   email: "contact@prestigestandsolutions.com",
-  phone: "+34 645 559 047",
-  phoneHref: "tel:+34645559047",
   web: "www.prestigestandsolutions.com",
 } as const;
 
