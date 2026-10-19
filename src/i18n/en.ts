@@ -68,7 +68,7 @@ export const en: Dictionary = {
     title: "From render to exhibition hall.",
     cta: "Tell us about your show",
     items: [
-      { title: "Novasol Chemicals", meta: "Modular stand · Chemical industry", alt: "Novasol Chemicals stand" },
+      { title: "Prestige Chemicals", meta: "Modular stand · Chemical industry", alt: "Prestige Chemicals stand" },
       { title: "Prestige corporate stand", meta: "Design, graphics and construction", alt: "Prestige corporate stand" },
       { title: "On-site build", meta: "Custom curved structure", alt: "A custom curved structure being built in an exhibition hall" },
       { title: "International trade shows", meta: "At every kind of event", alt: "Exhibition hall at an international trade show" },
